@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+     android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.symb.task.todo.TodoList">
+
+    <Toolbar
+        android:id="@+id/toolbar3"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#FFEB3B" />
+
+    <TextView
+        style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+        android:layout_width="152dp"
+        android:layout_height="57dp"
+        android:gravity="center"
+        android:text="Todo Lists"
+        android:textSize="20dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/notes_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="0dp"
+        android:layout_below="@+id/toolbar3" />
+</RelativeLayout>
