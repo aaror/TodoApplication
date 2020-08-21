@@ -8,13 +8,16 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView.ViewHolder;
 
 import java.util.List;
 
 public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
     private Context context;
     private static List<Todo_task> NotesList;
+   private CardView cardview;
 
 
     public Adapter(Context context, List<Todo_task> NotesList){
@@ -27,13 +30,17 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
         View itemview;
         LayoutInflater minflator= LayoutInflater.from(context);
         itemview=minflator.inflate(R.layout.custom_grid,viewGroup,false);
-        return new MyViewHolder(itemview);
+MyViewHolder holder =new MyViewHolder(itemview);
+
+        return holder;
     }
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+
         holder.note.setText(NotesList.get(position).getContent());
         holder.date.setText(NotesList.get(position).getDate());
+
 
     }
 
@@ -42,7 +49,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
         return NotesList.size();
     }
 
-    public static class MyViewHolder extends RecyclerView.ViewHolder{
+    public static class MyViewHolder extends ViewHolder{
         TextView note,date;
 
 
