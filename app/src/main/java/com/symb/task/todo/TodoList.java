@@ -11,7 +11,9 @@ import java.util.List;
 public class TodoList extends AppCompatActivity {
 RecyclerView notesList;
 Adapter adapter;
-List<Todo_task> tododoList;
+List<Todo_task> todoList;
+TodoListDb db;
+Todo_task todo;
 
 TodoListDb mDatabaseHelper;
     @Override
@@ -20,12 +22,15 @@ TodoListDb mDatabaseHelper;
         setContentView(R.layout.activity_todo_list);
         mDatabaseHelper= new TodoListDb(this);
         TodoListDb db=new TodoListDb(this);
-        tododoList=db.getTodos();
-
+        todoList=db.getTodos();
         notesList=(RecyclerView) findViewById(R.id.notes_list);
         notesList.setLayoutManager(new GridLayoutManager(this,2));
-        adapter=new Adapter(this,tododoList);
+        adapter=new Adapter(this,todoList);
         notesList.setAdapter(adapter);
+
+
+
+
 
 
     }

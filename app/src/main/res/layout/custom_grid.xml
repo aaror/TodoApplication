@@ -4,9 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
    android:layout_width="160dp"
     android:layout_height="170dp"
-    android:layout_margin="20dp">
+    android:layout_margin="20dp"
+    android:id="@+id/cardview">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#FFFC3B"
@@ -14,17 +15,26 @@
 
         <TextView
             android:id="@+id/note"
-            android:layout_width="match_parent"
-            android:layout_height="151dp"
-            android:textSize="13sp" />
+            android:layout_width="160dp"
+            android:layout_height="147dp"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toTopOf="@+id/date"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/date"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#FFFC3B"
-            android:textAlignment="textStart" />
+            android:layout_width="161dp"
+            android:layout_height="24dp"
+            android:layout_below="@+id/note"
+            android:background="#FFEB3B"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/note" />
 
 
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

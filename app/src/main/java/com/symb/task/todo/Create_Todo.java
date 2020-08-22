@@ -62,29 +62,13 @@ public class Create_Todo extends AppCompatActivity {
 
         });
 
-        //                String NewEntry = editText.getText().toString();
-//                if (editText.length() != 0) {
-//                    AddData(NewEntry);
-//                    editText.setText("");
-//                } else {
-//                    toastMessage(" You must put something in the text field!");
-//                }
-//            }
+
 
 
 
     }
 
 
-
-//    public void AddData(Todo_task newEntry) {
-//        long insert = mDatabaseHelper.AddTodo(newEntry);
-//        if (insert != 0) {
-//            toastMessage("Data Succesfully Inserted!");
-//        } else {
-//            toastMessage("Something Went wrong!");
-//        }
-//    }
 
     private void toastMessage(String message) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();

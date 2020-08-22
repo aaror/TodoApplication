@@ -10,15 +10,17 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.List;
 
+import static android.content.ContentValues.TAG;
+
 public class TodoListDb extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 2;
     private static final String DATABASE_NAME="TodoList_dbs";
     private static final String DATABASE_TABLE="TodolistTables";
 
     //columns name for database table
-    private static final String KEY_ID="id";
-    private static final String KEY_CONTENT="content";
-    private static final String KEY_DATE="date";
+    public static final String KEY_ID="id";
+    public static final String KEY_CONTENT="content";
+    public static final String KEY_DATE="date";
 
 
     TodoListDb(Context context){
@@ -92,5 +94,11 @@ public class TodoListDb extends SQLiteOpenHelper {
             }while (cur.moveToNext());
         }
         return alllist;
+    }
+   public void deleteTodo(long id){
+        SQLiteDatabase db=this.getWritableDatabase();
+        String query="DELETE FROM "+ DATABASE_TABLE + " WHERE "+ KEY_ID + "=?";
+       Log.d(TAG, "deleteTodo: query:"+ query);
+       db.execSQL(query);
     }
 }
